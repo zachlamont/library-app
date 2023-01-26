@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 80px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(232, 232, 232);
+  height: 90vh;
+}
+
+#book-container,
+.add-container {
+  width: 75vw;
+}
+.book {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  margin: 8px 10px;
+  height: auto;
+  min-height: 40px;
+  width: 100%;
+  padding-left: 10px;
+}
+.headings {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  font-size: small;
+  margin: 8px 10px;
+  width: 100%;
+  min-height: 40px;
+  color: grey;
+  padding-left: 10px;
+}
+#add-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(44, 223, 163);
+  border-radius: 5px;
+  margin: 0px 10px;
+  min-height: 40px;
+  width: 100%;
+}
+
+#submit-modal {
+  background-color: rgb(44, 223, 163);
+  border-radius: 5px;
+  margin: 5px;
+  min-height: 40px;
+  border: none;
+  color: black;
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+p {
+  color: grey;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100%;
+  padding: 5px;
+}
+
+.author,
+.title {
+  width: 30%;
+}
+.pages,
+.isRead {
+  width: 15%;
+}
+.isRead {
+  border-radius: 0px 5px 5px 0px;
+  padding-left: 5px;
+  border-right: 15px solid rgb(44, 223, 163);
+  text-decoration: underline;
+}
+.green {
+  background-color: rgb(44, 223, 163);
+}
+
+#modal {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#modal::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: white;
+  width: clamp(350px, 50vw, 450px);
+  padding: 30px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin: 10px;
+}
+input {
+  border: none;
+  background-color: rgb(232, 232, 232);
+  height: 30px;
+  border-radius: 8px;
+  margin: 6px;
+}
+label {
+  margin-left: 10px;
+}
+#is-read {
+  margin-top: -20px;
+  align-self: flex-end;
+  width: 20px;
+}

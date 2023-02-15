@@ -22,6 +22,10 @@ addNew.addEventListener("click", function () {
 submitModal.addEventListener("click", function (event) {
   event.preventDefault(); // prevent the form from submitting
 
+  validateForm();
+});
+
+function addBook() {
   let author = document.getElementById("author").value;
   let title = document.getElementById("title").value;
   let pages = document.getElementById("quantity").value;
@@ -66,4 +70,22 @@ submitModal.addEventListener("click", function (event) {
   bookContainer.appendChild(bookDiv);
 
   modal.style.display = "none"; //hide the modal
-});
+}
+
+function validateForm() {
+  const author = document.getElementById("author").value;
+  const title = document.getElementById("title").value;
+  const quantity = document.getElementById("quantity").value;
+
+  if (author === "" || title === "" || quantity === "") {
+    alert("Please fill out all required fields.");
+    return false;
+  }
+
+  if (quantity < 1) {
+    alert("Number of pages must be at least 1.");
+    return false;
+  }
+
+  addBook();
+}
